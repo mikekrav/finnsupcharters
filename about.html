@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Finns Up Charters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header-banner {
+            background-color: #000000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-line1 {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .logo-line2 {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #87CEEB;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #87CEEB;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .about-section {
+            margin-bottom: 100px;
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .section-content.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .image-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .captain-image {
+            background-image: url('images/captain.jpg');
+        }
+
+        .boat-image {
+            background-image: url('images/boat.jpg');
+        }
+
+        .text-content {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .section-description {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section-description p {
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            padding: 80px 20px;
+            background-color: #7BAFD4;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .header-banner {
+                padding: 20px 25px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .navigation {
+                gap: 20px;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .section-content,
+            .section-content.reverse {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .section-image {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-description {
+                font-size: 1rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .section-content,
+            .section-content.reverse {
+                gap: 40px;
+            }
+
+            .section-image {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-banner">
+        <a href="index.html" class="logo">
+            <span class="logo-line1">Finns Up</span>
+            <span class="logo-line2">Charters</span>
+        </a>
+        <nav class="navigation">
+            <a href="tours.html" class="nav-link">Tours</a>
+            <a href="location.html" class="nav-link">Location</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">About Us</h1>
+        
+        <section class="about-section">
+            <div class="section-content">
+                <div class="image-container">
+                    <div class="section-image captain-image"></div>
+                </div>
+                <div class="text-content">
+                    <h2 class="section-title">Our Captain</h2>
+                    <div class="section-description">
+                        <p>Meet Captain Jake Thompson, a third-generation mariner with over 25 years of experience navigating the waters around Wilmington and the Carolina coast. Born and raised on the Cape Fear River, Jake has an intimate knowledge of these waters that comes only from a lifetime spent on and around them.</p>
+                        
+                        <p>Captain Jake holds a U.S. Coast Guard Master's License and is certified in CPR and First Aid. His passion for the sea began as a young boy fishing with his grandfather, and today he brings that same enthusiasm and respect for the ocean to every charter. Known for his calm demeanor and expert seamanship, Jake ensures every guest feels safe while experiencing the adventure of a lifetime.</p>
+                        
+                        <p>When he's not chartering, Jake can be found restoring classic boats, teaching maritime safety courses, or simply enjoying a quiet evening watching the sunset over the Cape Fear River with his family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="section-content reverse">
+                <div class="text-content">
+                    <h2 class="section-title">Our Boat</h2>
+                    <div class="section-description">
+                        <p>The "Finn's Dream" is a beautiful 38-foot custom sport fishing vessel, meticulously maintained and equipped with the latest safety and navigation technology. Built specifically for the Carolina waters, she combines comfort with performance to deliver an exceptional charter experience.</p>
+                        
+                        <p>Our boat features a spacious cabin with comfortable seating for up to 12 passengers, a full galley for refreshments, and a clean restroom facility. The large deck area provides plenty of room for fishing, sightseeing, or simply relaxing in the coastal breeze. Advanced fish-finding electronics and professional-grade fishing equipment ensure successful fishing trips for anglers of all skill levels.</p>
+                        
+                        <p>Safety is our top priority. The "Finn's Dream" is equipped with all required U.S. Coast Guard safety equipment, GPS navigation, radar, marine radio, and emergency beacon technology. Regular inspections and maintenance ensure she's always ready for your adventure on the water.</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="section-image boat-image"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2 class="contact-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-info">
+                        <a href="tel:+19105551234">(910) 555-1234</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-info">
+                        <a href="mailto:info@finnsupcharters.com">info@finnsupcharters.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
