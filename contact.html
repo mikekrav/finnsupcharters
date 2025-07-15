@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Finns Up Charters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header-banner {
+            background-color: #000000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-line1 {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .logo-line2 {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #87CEEB;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #87CEEB;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+
+        .contact-form-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 80px;
+            display: none;
+        }
+
+        .form-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #7BAFD4;
+            box-shadow: 0 0 0 3px rgba(123, 175, 212, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+            background-color: #7BAFD4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            justify-self: center;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #6ba3c8;
+            transform: translateY(-2px);
+        }
+
+        .contact-info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .info-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .info-content {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .info-content a {
+            color: #7BAFD4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: #6ba3c8;
+        }
+
+        .bottom-contact-section {
+            padding: 80px 20px;
+            background-color: #7BAFD4;
+            color: white;
+            text-align: center;
+        }
+
+        .bottom-contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bottom-contact-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .bottom-contact-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .bottom-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+        }
+
+        .bottom-contact-item {
+            text-align: center;
+        }
+
+        .bottom-contact-label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .bottom-contact-info {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .bottom-contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .bottom-contact-info a:hover {
+            color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .header-banner {
+                padding: 20px 25px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .navigation {
+                gap: 20px;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .intro-text {
+                font-size: 1.1rem;
+            }
+
+            .contact-form-section {
+                padding: 30px 25px;
+            }
+
+            .form-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-info-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .bottom-contact-title {
+                font-size: 2rem;
+            }
+
+            .bottom-contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-banner">
+        <a href="index.html" class="logo">
+            <span class="logo-line1">FINNS UP</span>
+            <span class="logo-line2">CHARTERS</span>
+        </a>
+        <nav class="navigation">
+            <a href="tours.html" class="nav-link">Tours</a>
+            <a href="location.html" class="nav-link">Location</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">Contact Us</h1>
+        
+        <div class="intro-text">
+            <p>
+                We can't wait to plan an unforgettable adventure on the water with you! Whether you're dreaming of a peaceful sunset cruise, an exciting fishing expedition, or a custom tour tailored to your interests, we're here to make it happen. Reach out to us today and let's start planning your perfect day on the beautiful Carolina waters.
+            </p>
+        </div>
+
+        <section class="contact-info-section">
+            <div class="info-card">
+                <h3 class="info-title">Call Us</h3>
+                <div class="info-content">
+                    <a href="tel:+19105551234">(910) 555-1234</a>
+                    <p>Available daily from 7:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="info-title">Email Us</h3>
+                <div class="info-content">
+                    <a href="mailto:info@finnsupcharters.com">info@finnsupcharters.com</a>
+                    <p>We typically respond within 24 hours</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="bottom-contact-section">
+        <div class="bottom-contact-content">
+            <h2 class="bottom-contact-title">Ready to Set Sail?</h2>
+            <p class="bottom-contact-text">
+                Your Carolina coastal adventure awaits! Contact us today to book your charter and discover why Finns Up Charters is Wilmington's premier choice for maritime experiences.
+            </p>
+            <div class="bottom-contact-grid">
+                <div class="bottom-contact-item">
+                    <div class="bottom-contact-label">Phone</div>
+                    <div class="bottom-contact-info">
+                        <a href="tel:+19105551234">(910) 555-1234</a>
+                    </div>
+                </div>
+
+                <div class="bottom-contact-item">
+                    <div class="bottom-contact-label">Email</div>
+                    <div class="bottom-contact-info">
+                        <a href="mailto:info@finnsupcharters.com">info@finnsupcharters.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
