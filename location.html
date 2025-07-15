@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - Finns Up Charters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header-banner {
+            background-color: #000000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-line1 {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .logo-line2 {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #87CEEB;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #87CEEB;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .location-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .location-tagline {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .map-section {
+            margin-bottom: 80px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) contrast(120%) brightness(90%);
+        }
+
+        .description-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .description-section p {
+            margin-bottom: 25px;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        .description-section strong {
+            color: #2c3e50;
+            font-weight: 400;
+        }
+
+        .cta-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .cta-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+            padding: 80px 20px;
+            background-color: #7BAFD4;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .header-banner {
+                padding: 20px 25px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .navigation {
+                gap: 20px;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .location-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+
+            .description-section {
+                padding: 40px 20px;
+            }
+
+            .description-section p {
+                font-size: 1rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-banner">
+        <a href="index.html" class="logo">
+            <span class="logo-line1">Finns Up</span>
+            <span class="logo-line2">Charters</span>
+        </a>
+        <nav class="navigation">
+            <a href="tours.html" class="nav-link">Tours</a>
+            <a href="location.html" class="nav-link">Location</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">Our Location</h1>
+        <p class="location-subtitle">Wilmington, NC</p>
+        <p class="location-tagline">Where history meets coastal splendor</p>
+        
+        <section class="map-section">
+            <div class="map-container">
+                <iframe 
+                    class="map-iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51648.05110576179!2d-77.99455022089842!3d34.22573!2sWilmington%2C%20NC!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="description-section">
+            <p>Welcome to Wilmington, North Carolina, a city that seamlessly blends rich history with breathtaking coastal beauty. Nestled along the Cape Fear River, Wilmington invites you to explore its historic charm, pristine beaches, and the endless adventures that its rivers and oceans offer.</p>
+            
+            <p><strong>Historic Tapestry:</strong> Immerse yourself in the allure of Wilmington's historic district, where cobblestone streets and antebellum architecture tell tales of a bygone era. From the iconic Bellamy Mansion to the Battleship USS North Carolina, each corner whispers stories of Wilmington's pivotal role in American history.</p>
+            
+            <p><strong>Sun, Sand, and Surf:</strong> Wilmington is a coastal haven with sun-kissed beaches that beckon beachcombers and water enthusiasts alike. Dip your toes in the warm sand of Wrightsville Beach, known for its crystal-clear waters and vibrant atmosphere. Feel the ocean breeze at Carolina Beach, where the lively boardwalk and charming seaside community offer a perfect blend of relaxation and entertainment.</p>
+            
+            <p><strong>Boating Extravaganza:</strong> For those with a passion for boating, Wilmington is a paradise waiting to be explored. Navigate the scenic Cape Fear River, where historic riverwalks and lively waterfronts set the stage for memorable cruises. Whether you're captaining your own vessel or joining a guided tour, the waterways of Wilmington promise breathtaking views and unforgettable maritime experiences.</p>
+            
+            <p><strong>Rivers and Oceans Beckon:</strong> Wilmington is a gateway to both the mighty Cape Fear River and the vast Atlantic Ocean. Embark on river cruises, kayak excursions, or paddleboarding adventures along the winding watercourses. Feel the exhilaration of deep-sea fishing or simply bask in the serenity of a riverside stroll. The options are as diverse as the landscapes themselves.</p>
+            
+            <p><strong>Plan Your Wilmington Adventure:</strong> Whether you're a history buff, beach lover, boating enthusiast, or simply seeking the perfect blend of culture and coastal allure, Wilmington has something for everyone. Join us in discovering the magic of this Southern gem, where each day unfolds with a new chapter in the captivating story of Wilmington, NC.</p>
+            
+            <p><strong>Ready to Set Sail?</strong> <strong>Book Your Boating Tour:</strong> Experience the wonders of Wilmington from the water by booking an unforgettable boating tour with us. Visit our <a href="tours.html" class="cta-link">Tours</a> to explore the diverse options that cater to every adventurer's dream. From scenic river cruises to thrilling maritime escapades, we have the perfect journey for you.</p>
+        </section>
+    </main>
+
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2 class="contact-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-info">
+                        <a href="tel:+19105551234">(910) 555-1234</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-info">
+                        <a href="mailto:info@finnsupcharters.com">info@finnsupcharters.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
