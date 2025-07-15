@@ -3,386 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finns Up Charters</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Finns Up Charters - Wilmington, NC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
-        
+
         body {
-            background-color: #f5f5f5;
-            color: #1e3a8a;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
         }
-        
-        .header {
-            background-color: #ffffff;
-            color: #1e3a8a;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo-img {
-            width: 30px;
-            height: 30px;
-            max-width: 30px;
-            max-height: 30px;
-            object-fit: contain;
-            flex-shrink: 0;
-            display: block;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .location {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #1e3a8a;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .nav-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .nav-menu a {
-            color: #1e3a8a;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        
-        .nav-menu a:hover {
-            color: #4CAF50;
-        }
-        
-        .contact-number {
-            font-size: 1.1rem;
-            color: #1e3a8a;
-            font-weight: 500;
-        }
-        
+
         .hero-section {
             position: relative;
-            height: 500px;
-            overflow: hidden;
-        }
-        
-        .image-section {
-            width: 100%;
-            height: 100%;
-            background-color: #ddd;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px 50px;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-line1 {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .logo-line2 {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            transition: color 0.3s ease, transform 0.3s ease;
             position: relative;
         }
-        
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
+
+        .nav-link:hover {
+            color: #87CEEB;
+            transform: translateY(-2px);
         }
-        
-        .hero-overlay {
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #87CEEB;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 5;
+        }
+
+        .hero-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .intro-section {
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .intro-content h2 {
+            font-weight: 400;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .intro-content p {
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            color: #3498db;
+            font-weight: 400;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .services-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .service-image::after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(30, 58, 138, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
         }
-        
-        .hero-text {
-            text-align: center;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 2rem;
-            border-radius: 20px;
-            width: 60%;
-            max-width: 800px;
+
+        .tours-image {
+            background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
         }
-        
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+
+        .location-image {
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
         }
-        
-        .tours-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+
+        .about-image {
+            background-image: url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
         }
-        
-        .tours-btn:hover {
-            background-color: #45a049;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+
+        .service-content {
+            padding: 30px;
         }
-        
-        .portfolio-section {
-            padding: 4rem 2rem;
-            background-color: #f9f9f9;
+
+        .service-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
-        
-        .portfolio-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .portfolio-item {
-            flex: 1;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .portfolio-image {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .portfolio-item h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            margin: 1rem;
-            color: #1e3a8a;
-        }
-        
-        .portfolio-item a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            transition: opacity 0.3s;
-        }
-        
-        .portfolio-item a:hover {
-            opacity: 0.9;
-        }
-        
-        .portfolio-item p {
-            margin: 0 1rem 1.5rem;
+
+        .service-description {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.6;
             color: #666;
-            line-height: 1.5;
         }
-        
-        .cta-section {
-            text-align: center;
-            padding: 2rem;
-            background-color: #f5f5f5;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .cta-text {
-            font-size: 1.2rem;
-            color: #1e3a8a;
-        }
-        
-        .cta-text a {
-            color: #1e3a8a;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .cta-text a:hover {
-            color: #4CAF50;
-        }
-        
-        .cta-text a span {
-            font-weight: 500;
-        }
-        
-        .contact-info {
-            padding: 2rem;
-            background-color: #f1f1f1;
+
+        .contact-section {
+            padding: 80px 20px;
+            background-color: #7BAFD4;
+            color: white;
             text-align: center;
         }
-        
-        .container {
-            max-width: 1200px;
+
+        .contact-content {
+            max-width: 600px;
             margin: 0 auto;
         }
-        
-        .contact-details p {
-            margin: 0.5rem 0;
-            color: #1e3a8a;
+
+        .contact-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
         }
-        
-        .contact-details strong {
-            font-weight: 600;
-            margin-right: 0.5rem;
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
         }
-        
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .contact-label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #f0f0f0;
+        }
+
         @media (max-width: 768px) {
             .header {
+                padding: 20px 25px;
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
+                gap: 20px;
             }
-            
-            .logo-container {
-                text-align: center;
+
+            .navigation {
+                gap: 20px;
             }
-            
-            .nav-wrapper {
-                align-items: center;
+
+            .hero-title {
+                font-size: 2.5rem;
             }
-            
-            .hero-text h1 {
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .intro-content h2 {
                 font-size: 2rem;
             }
-            
-            .hero-text p {
-                font-size: 1rem;
+
+            .intro-content {
+                font-size: 1.1rem;
             }
-            
-            .portfolio-container {
-                flex-direction: column;
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            
-            .portfolio-item {
-                margin-bottom: 2rem;
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <img src="websiteAssets/finnslogo_1.jpeg" alt="Finns Up Logo" class="logo-img" ></i>
-            <div class="logo-text">
-                <div class="logo">Finns Up Charters</div>
-                <div class="location">Wilmington, NC</div>
-            </div>
-        </div>
-        <div class="nav-wrapper">
-            <nav class="nav-menu">
-                <a href="tours.html">Tours</a>
-                <a href="location.html">Location</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <div class="contact-number">
-                Contact: (910) 515-7856
-            </div>
-        </div>
-    </header>
-    
     <section class="hero-section">
-        <div class="image-section">
-            <img src="websiteAssets/liane-lee-ACPsfR_PljE-unsplash.jpg" alt="Charter Fishing" class="hero-image">
-            <div class="hero-overlay">
-                <div class="hero-text">
-                    <h1>Book a tour with us today</h1>
-                    <a href="tours.html" class="tours-btn">Tours</a>
-                </div>
+        <header class="header">
+            <div class="logo">
+                <span class="logo-line1">Finns Up</span>
+                <span class="logo-line2">Charters</span>
             </div>
+            <nav class="navigation">
+                <a href="tours.html" class="nav-link">Tours</a>
+                <a href="location.html" class="nav-link">Location</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Finns Up Charters</h1>
+            <p class="hero-subtitle">Wilmington, NC</p>
         </div>
     </section>
-    
-    <section class="portfolio-section">
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <a href="tours.html">
-                        <img src="day-job.png" alt="Tours">
-                    </a>
-                </div>
-                <h3>Tours</h3>
-                <p>Explore our fishing charter packages and tour options.</p>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <a href="location.html">
-                        <img src="projects.png" alt="Location">
-                    </a>
-                </div>
-                <h3>Location</h3>
-                <p>Find us in beautiful Wilmington, NC and learn about our fishing spots.</p>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <a href="about.html">
-                        <img src="writing.png" alt="About">
-                    </a>
-                </div>
-                <h3>About</h3>
-                <p>Learn about our experienced crew and charter boat.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section">
-        <p class="cta-text">Ready to book your adventure? <a href="contact.html">Get in <span>touch</span></a>.</p>
-    </section>
-    
-    <section class="contact-info">
+
+    <section class="intro-section">
         <div class="container">
-            <div class="contact-details">
-                <p><strong>Phone:</strong> (910) 515-7856</p>
-                <p><strong>Email:</strong> Finnsupcharters@gmail.com</p>
+            <div class="intro-content">
+                <h2>Experience the <span class="highlight">Crystal Coast</span></h2>
+                <p>
+                    Welcome to Finns Up Charters, your premier destination for unforgettable maritime adventures along the stunning North Carolina coast. Based in the historic port city of Wilmington, we offer authentic charter experiences that showcase the natural beauty and rich waters of the Cape Fear River and Atlantic Ocean.
+                </p>
+                <p>
+                    Our experienced captains and crew are passionate about sharing the magic of coastal Carolina waters with visitors and locals alike. Whether you're seeking a peaceful sunset cruise, an exciting fishing expedition, or a customized tour of our pristine waterways, we provide safe, comfortable, and memorable experiences for all ages.
+                </p>
+                <p>
+                    From dolphin watching and scenic harbor tours to deep-sea fishing adventures and private celebrations, Finns Up Charters combines local expertise with genuine hospitality to create the perfect day on the water. Let us show you why Wilmington's waters are truly something special.
+                </p>
+            </div>
+        </div>
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <a href="tours.html" class="service-card">
+                    <div class="service-image tours-image"></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Tours</h3>
+                        <p class="service-description">
+                            Discover the beauty of Wilmington's waterways with our guided tours. From scenic river cruises to wildlife watching adventures, explore historic sites and natural wonders while learning about local maritime heritage from our experienced captains.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="location.html" class="service-card">
+                    <div class="service-image location-image"></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Location</h3>
+                        <p class="service-description">
+                            Conveniently located in historic downtown Wilmington, our marina provides easy access to the Cape Fear River and Atlantic Ocean. Find us at the heart of the city's vibrant waterfront district, surrounded by restaurants, shops, and attractions.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="about.html" class="service-card">
+                    <div class="service-image about-image"></div>
+                    <div class="service-content">
+                        <h3 class="service-title">About Us</h3>
+                        <p class="service-description">
+                            With over 20 years of experience navigating Carolina waters, our Coast Guard licensed captains are passionate about sharing the magic of our coastal region. We pride ourselves on safety, local expertise, and creating unforgettable memories on the water.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2 class="contact-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-info">
+                        <a href="tel:+19105551234">(910) 555-1234</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-info">
+                        <a href="mailto:info@finnsupcharters.com">info@finnsupcharters.com</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
