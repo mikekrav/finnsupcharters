@@ -98,30 +98,37 @@
             margin-bottom: 80px;
         }
 
-        .about-section {
-            margin-bottom: 100px;
-        }
-
-        .section-content {
+        .about-sections-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            margin-bottom: 100px;
         }
 
-        .section-content.reverse {
-            grid-template-columns: 1fr 1fr;
+        .about-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .image-container {
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
         }
 
         .section-image {
             width: 100%;
-            height: 400px;
+            height: 300px;
             background-size: cover;
             background-position: center;
         }
@@ -134,28 +141,16 @@
             background-image: url('boat_image.jpg');
         }
 
-        .text-content {
-            padding: 20px;
-        }
-
-        .section-title {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-
         .section-description {
             font-family: 'Roboto', sans-serif;
             font-weight: 300;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
             color: #555;
         }
 
         .section-description p {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .contact-section {
@@ -186,6 +181,12 @@
 
         .contact-item {
             text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
 
         .contact-label {
@@ -227,15 +228,9 @@
                 font-size: 2.5rem;
             }
 
-            .section-content,
-            .section-content.reverse {
+            .about-sections-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .section-image {
-                height: 300px;
+                gap: 60px;
             }
 
             .section-title {
@@ -243,7 +238,7 @@
             }
 
             .section-description {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .contact-title {
@@ -257,13 +252,12 @@
         }
 
         @media (max-width: 1024px) and (min-width: 769px) {
-            .section-content,
-            .section-content.reverse {
+            .about-sections-container {
                 gap: 40px;
             }
 
             .section-image {
-                height: 350px;
+                height: 250px;
             }
         }
     </style>
@@ -271,8 +265,8 @@
 <body>
     <header class="header-banner">
         <a href="index.html" class="logo">
-            <span class="logo-line1">Finns Up</span>
-            <span class="logo-line2">Charters</span>
+            <span class="logo-line1">FINNS UP</span>
+            <span class="logo-line2">CHARTERS</span>
         </a>
         <nav class="navigation">
             <a href="tours.html" class="nav-link">Tours</a>
@@ -285,43 +279,39 @@
     <main class="main-content">
         <h1 class="page-title">About Us</h1>
         
-        <section class="about-section">
-            <div class="section-content">
+        <div class="about-sections-container">
+            <section class="about-section">
+                <h2 class="section-title">Our Captain</h2>
                 <div class="image-container">
                     <div class="section-image captain-image"></div>
                 </div>
-                <div class="text-content">
-                    <h2 class="section-title">Our Captain</h2>
-                    <div class="section-description">
-                        <p>Meet Captain Michael Kravanja, a certified USCG licensed captain who traded the Garden State for North Carolina's serene shores in 2020. With a unique background as both a mariner and former Italian chef, Michael brings an unconventional blend of passions to the waters around the Carolina coast.</p>
-                        
-                        <p>Captain Michael holds a U.S. Coast Guard Master's License and combines his love for the sea with culinary artistry and a deep appreciation for North Carolina's rich history. His journey from crafting delectable dishes to navigating open waters reflects his belief in following one's heart—which led him to the Tar Heel State in search of blue seas and better weather.</p>
-                        
-                        <p>Known for his passion for the outdoors and commitment to sharing the stories that make this region special, Michael ensures every guest experiences the harmony between the tranquility of the water and the cultural richness of North Carolina. When he's not chartering, Michael can be found casting a line for leisurely fishing, cruising the coastline, or exploring the hidden gems that define the area's historical significance.</p>
-<p>As the founder of Finns Up Charters, Michael's vision is to create adventures seasoned with passion and sprinkled with history, sharing the wonders of the Carolina coast with every guest who joins him on the water.</p>
-                    </div>
+                <div class="section-description">
+                    <p>Meet Captain Michael Kravanja, a certified USCG licensed captain who traded the Garden State for North Carolina's serene shores in 2020. With a unique background as both a mariner and former Italian chef, Michael brings an unconventional blend of passions to the waters around the Carolina coast.</p>
+                    
+                    <p>Captain Michael holds a U.S. Coast Guard Master's License and combines his love for the sea with culinary artistry and a deep appreciation for North Carolina's rich history. His journey from crafting delectable dishes to navigating open waters reflects his belief in following one's heart—which led him to the Tar Heel State in search of blue seas and better weather.</p>
+                    
+                    <p>Known for his passion for the outdoors and commitment to sharing the stories that make this region special, Michael ensures every guest experiences the harmony between the tranquility of the water and the cultural richness of North Carolina. When he's not chartering, Michael can be found casting a line for leisurely fishing, cruising the coastline, or exploring the hidden gems that define the area's historical significance.</p>
+                    
+                    <p>As the founder of Finns Up Charters, Michael's vision is to create adventures seasoned with passion and sprinkled with history, sharing the wonders of the Carolina coast with every guest who joins him on the water.</p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="about-section">
-            <div class="section-content reverse">
-                <div class="text-content">
-                    <h2 class="section-title">Our Boat</h2>
-                    <div class="section-description">
-                        <p>"Finn's Up" is a meticulously crafted 2000 Boston Whaler Conquest 21, built with the exceptional safety features that have made Boston Whaler boats legendary on the water. This 21-foot vessel combines comfort, safety, and performance to deliver an unforgettable charter experience on the Carolina coast.</p>
-                        
-                        <p>Our boat features Boston Whaler's renowned foam-filled hull construction, ensuring remarkable stability and buoyancy that has earned these vessels their unsinkable reputation. The comfortable seating accommodates guests for fishing, sightseeing, or relaxing in the coastal breeze, while the convenient on-board restroom ensures uninterrupted enjoyment throughout your adventure.</p>
-                        
-                        <p>Safety is our top priority. The "Unsinkable Legend" is equipped with state-of-the-art GPS navigation technology for precision in every nautical mile, along with all required U.S. Coast Guard safety equipment. Professional-grade fishing gear is provided for anglers of all skill levels, and our well-stocked cooler keeps refreshing beverages and snacks on hand for your comfort.</p>
-                        <p>As evening approaches, personalized LED lighting transforms the vessel into a spectacular display, creating the perfect ambiance for magical sunsets over the Carolina waters. Regular maintenance ensures she's always ready for your next coastal adventure.</p>
-                    </div>
-                </div>
+            <section class="about-section">
+                <h2 class="section-title">Our Boat</h2>
                 <div class="image-container">
                     <div class="section-image boat-image"></div>
                 </div>
-            </div>
-        </section>
+                <div class="section-description">
+                    <p>The "Unsinkable Legend" is a meticulously crafted 2000 Boston Whaler Conquest 21, built with the exceptional safety features that have made Boston Whaler boats legendary on the water. This 21-foot vessel combines comfort, safety, and performance to deliver an unforgettable charter experience on the Carolina coast.</p>
+                    
+                    <p>Our boat features Boston Whaler's renowned foam-filled hull construction, ensuring remarkable stability and buoyancy that has earned these vessels their unsinkable reputation. The comfortable seating accommodates guests for fishing, sightseeing, or relaxing in the coastal breeze, while the convenient on-board restroom ensures uninterrupted enjoyment throughout your adventure.</p>
+                    
+                    <p>Safety is our top priority. The "Unsinkable Legend" is equipped with state-of-the-art GPS navigation technology for precision in every nautical mile, along with all required U.S. Coast Guard safety equipment. Professional-grade fishing gear is provided for anglers of all skill levels, and our well-stocked cooler keeps refreshing beverages and snacks on hand for your comfort.</p>
+                    
+                    <p>As evening approaches, personalized LED lighting transforms the vessel into a spectacular display, creating the perfect ambiance for magical sunsets over the Carolina waters. Regular maintenance ensures she's always ready for your next coastal adventure.</p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <section class="contact-section">
@@ -331,14 +321,14 @@
                 <div class="contact-item">
                     <div class="contact-label">Phone</div>
                     <div class="contact-info">
-                        <a href="tel:+19105551234">(910) 515-7856</a>
+                        <a href="tel:+19105157856">(910) 515-7856</a>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <div class="contact-label">Email</div>
                     <div class="contact-info">
-                        <a href="mailto:info@finnsupcharters.com">Finnsupcharters@gmail.com</a>
+                        <a href="mailto:finnsupcharters@gmail.com">Finnsupcharters@gmail.com</a>
                     </div>
                 </div>
             </div>
