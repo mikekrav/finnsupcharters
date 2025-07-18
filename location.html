@@ -118,11 +118,11 @@
             margin-bottom: 60px;
         }
 
-        .map-section {
+        .image-section {
             margin-bottom: 80px;
         }
 
-        .map-container {
+        .image-container {
             width: 100%;
             height: 350px;
             border-radius: 15px;
@@ -131,11 +131,12 @@
             margin: 0 auto;
         }
 
-        .map-iframe {
+        .location-image {
             width: 100%;
             height: 100%;
-            border: none;
-            filter: grayscale(100%) contrast(120%) brightness(90%);
+            background-image: url('boat_image.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .description-section {
@@ -169,6 +170,8 @@
             color: #2980b9;
             text-decoration: underline;
         }
+
+        .contact-section {
             padding: 80px 20px;
             background-color: #7BAFD4;
             color: white;
@@ -196,6 +199,12 @@
 
         .contact-item {
             text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
 
         .contact-label {
@@ -241,7 +250,7 @@
                 font-size: 1.2rem;
             }
 
-            .map-container {
+            .image-container {
                 height: 250px;
             }
 
@@ -267,8 +276,8 @@
 <body>
     <header class="header-banner">
         <a href="index.html" class="logo">
-            <span class="logo-line1">Finns Up</span>
-            <span class="logo-line2">Charters</span>
+            <span class="logo-line1">FINNS UP</span>
+            <span class="logo-line2">CHARTERS</span>
         </a>
         <nav class="navigation">
             <a href="tours.html" class="nav-link">Tours</a>
@@ -283,15 +292,9 @@
         <p class="location-subtitle">Wilmington, NC</p>
         <p class="location-tagline">Where history meets coastal splendor</p>
         
-        <section class="map-section">
-            <div class="map-container">
-                <iframe 
-                    class="map-iframe"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51648.05110576179!2d-77.99455022089842!3d34.22573!2sWilmington%2C%20NC!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+        <section class="image-section">
+            <div class="image-container">
+                <div class="location-image"></div>
             </div>
         </section>
 
@@ -319,14 +322,14 @@
                 <div class="contact-item">
                     <div class="contact-label">Phone</div>
                     <div class="contact-info">
-                        <a href="tel:+19105551234">(910) 555-1234</a>
+                        <a href="tel:+19105157856">(910) 515-7856</a>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <div class="contact-label">Email</div>
                     <div class="contact-info">
-                        <a href="mailto:info@finnsupcharters.com">info@finnsupcharters.com</a>
+                        <a href="mailto:finnsupcharters@gmail.com">Finnsupcharters@gmail.com</a>
                     </div>
                 </div>
             </div>
